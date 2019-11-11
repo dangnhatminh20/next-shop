@@ -102,8 +102,8 @@ const Header = () => (
       </nav>
     </div>
     {/*Header*/}
-    <div class="header_main text-center"> 
-      <div class="content_header">
+    <div className="header_main text-center"> 
+      <div className="content_header">
         {/* NamePage */}
       </div>
     </div>

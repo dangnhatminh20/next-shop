@@ -1,10 +1,13 @@
 import { useRouter } from "next/router";
 import Layout from "../../components/MyLayout.js";
 import Head from "next/head";
+import fetch from 'isomorphic-unfetch';
 
-const Content = () => {
-  //Lấy ra id
-  const router = useRouter();
+const Content = (product) => {
+  console.log(product.product)
+  const getProduct = product.product;
+  const linkImage = '../' + product.product.imageProduct;
+  // console.log(router);
   return (
     <div>
       <div>
@@ -17,89 +20,15 @@ const Content = () => {
                     <img
                       width={300}
                       height={169}
-                      src="../images/singerProduct_Page/sp5.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="images/singerProduct_Page/sp1.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="images/singerProduct_Page/sp2.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp3.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp4.jpeg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                </div>
-                <div className="slider-nav">
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp5.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp1.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp2.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp3.jpg"
-                      alt="Xem chi tiết"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      width={300}
-                      height={169}
-                      src="../images/singerProduct_Page/sp4.jpeg"
+                      src= {linkImage}
                       alt="Xem chi tiết"
                     />
                   </div>
                 </div>
               </div>
               <div className="col-6 product_content_area">
-                <p className="name_product">Bít Tết Bò Kobe</p>
-                <p className="price_product">150.000 vnd</p>
+                <p className="name_product">{getProduct.nameProduct}</p>
+                <p className="price_product">{getProduct.priceProduct}</p>
                 <p className="sub_product">
                   Bò bít tết là 1 món ăn được rất nhiếu người ưa chuộng, bởi mùi
                   vị thơm ngon ngọt của miếng thịt bò kết hợp với nước sốt khiến
@@ -113,7 +42,7 @@ const Content = () => {
                 <p className="igd">- Hạt điều</p>
                 <p />
                 <div className="quantity d-flex pt-2">
-                  <button className="qty-decrease" onclick type="button">
+                  <button className="qty-decrease" type="button">
                     -
                   </button>
                   <input
@@ -123,7 +52,7 @@ const Content = () => {
                     defaultValue={1}
                     size={4}
                   />
-                  <button className="qty-increase" onclick type="button">
+                  <button className="qty-increase" type="button">
                     +
                   </button>
                   <div className="btn_chose">
@@ -152,7 +81,7 @@ const Content = () => {
           <hr />
           <div className="row comment_area">
             <div className="col-1 avatar_comter">
-              <img src="../images/singerProduct_Page/sontung.png" alt />
+              <img src="../images/singerProduct_Page/sontung.png" alt='sontung' />
             </div>
             <div className="col-11 form_comment">
               <div className="vote">
@@ -177,7 +106,7 @@ const Content = () => {
             <hr />
             <div className="row">
               <div className="col-6 form-group">
-                <label htmlFor>Tên</label>
+                <label>Tên</label>
                 <input
                   className="form-control"
                   id="exampleInputEmail1"
@@ -187,7 +116,7 @@ const Content = () => {
                 />
               </div>
               <div className="col-6 form-group">
-                <label htmlFor>Email</label>
+                <label>Email</label>
                 <input
                   className="form-control"
                   id="exampleInputEmail1"
@@ -198,7 +127,7 @@ const Content = () => {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor>Bình luận của bạn</label>
+              <label>Bình luận của bạn</label>
               <textarea
                 className="form-control"
                 id="exampleFormControlTextarea1"
@@ -216,172 +145,43 @@ const Content = () => {
             </div>
           </div>
         </section>
-        <section className="section_3 container">
-          <div className="title">SẢN PHẨM LIÊN QUAN</div>
-          <hr />
-          <div className="card-deck row">
-            <div className="col-md-4 col-lg-3 col-sm-6">
-              <div className="card">
-                <div className="hover_area">
-                  <img
-                    className="card-img-top"
-                    src=".././images/shop_Page/sp5.jpg"
-                    alt="Card image cap"
-                  />
-                  <div className="hover_card">
-                    <a href="cart.html">
-                      <i className="fas fa-cart-plus" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-expand" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-heart" />
-                    </a>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div className="text-center">
-                    <a className="card-text name" href="singerProduct.html">
-                      Bít Tết Bò Kobe
-                    </a>
-                  </div>
-                  <p className="card-text tag text-center">
-                    <small className="text-muted">Món chính</small>
-                  </p>
-                  <hr />
-                  <p />
-                  <p className="card-text price text-center">50.000 VND</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 col-lg-3 col-sm-6">
-              <div className="card">
-                <div className="hover_area">
-                  <img
-                    className="card-img-top"
-                    src="./images/shop_Page/sp1.jpg"
-                    alt="Card image cap"
-                  />
-                  <div className="hover_card">
-                    <a href="cart.html">
-                      <i className="fas fa-cart-plus" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-expand" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-heart" />
-                    </a>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div className="text-center">
-                    <a className="card-text name" href="singerProduct.html">
-                      Bít Tết Bò Kobe
-                    </a>
-                  </div>
-                  <p className="card-text tag text-center">
-                    <small className="text-muted">Món chính</small>
-                  </p>
-                  <hr />
-                  <p />
-                  <p className="card-text price text-center">50.000 VND</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 col-lg-3 col-sm-6">
-              <div className="card">
-                <div className="hover_area">
-                  <img
-                    className="card-img-top"
-                    src="./images/shop_Page/sp2.jpg"
-                    alt="Card image cap"
-                  />
-                  <div className="hover_card">
-                    <a href="cart.html">
-                      <i className="fas fa-cart-plus" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-expand" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-heart" />
-                    </a>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div className="text-center">
-                    <a className="card-text name" href="singerProduct.html">
-                      Bít Tết Bò Kobe
-                    </a>
-                  </div>
-                  <p className="card-text tag text-center">
-                    <small className="text-muted">Món chính</small>
-                  </p>
-                  <hr />
-                  <p />
-                  <p className="card-text price text-center">50.000 VND</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 col-lg-3 col-sm-6">
-              <div className="card">
-                <div className="hover_area">
-                  <img
-                    className="card-img-top"
-                    src="./images/shop_Page/sp3.jpg"
-                    alt="Card image cap"
-                  />
-                  <div className="hover_card">
-                    <a href="cart.html">
-                      <i className="fas fa-cart-plus" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-expand" />
-                    </a>
-                    <a href="cart.html">
-                      <i className="fas fa-heart" />
-                    </a>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <div className="text-center">
-                    <a className="card-text name" href="singerProduct.html">
-                      Bít Tết Bò Kobe
-                    </a>
-                  </div>
-                  <p className="card-text tag text-center">
-                    <small className="text-muted">Món chính</small>
-                  </p>
-                  <hr />
-                  <p />
-                  <p className="card-text price text-center">50.000 VND</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );
 };
 
-export default function Post() {
+export default function Post(props) {
   const router = useRouter();
+  const id = router.query.id;
   return (
     <Layout>
       <Head>
         <link
-            rel="stylesheet"
-            type="text/css"
-            media="screen"
-            href="../css/singerProduct.css"
+          rel="stylesheet"
+          type="text/css"
+          media="screen"
+          href="../css/singerProduct.css"
         />
-    </Head>
-    {/* hiển thị id sản phẩm */}
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/css_parts/topHeader.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/css_parts/mainMenu.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/css_parts/footer2.css"/>
+      </Head>
+      {/* hiển thị id sản phẩm */}
       <h1>{router.query.id}</h1>
-      <Content />
+      <Content product={props.product}/>
     </Layout>
   );
 }
+
+//Connect data //Chú ý cách truyền param nhé, vi diệu vc =)))))))
+Post.getInitialProps = async function (router) {
+  const res = await fetch(
+    'https://yummy123.herokuapp.com/products/'+ router.query.id
+  );
+  const data = await res.json();
+  // console.log(data);
+  return {
+    product: data
+  };
+};

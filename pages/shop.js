@@ -1,117 +1,64 @@
-import { useRouter } from "next/router";
 import Layout from "../components/MyLayout.js";
 import Head from "next/head";
 import React, { useState } from "react";
 import Link from 'next/link';
+import fetch from 'isomorphic-unfetch';
 
 
 
 //Render Content
-const Content = () => {
-  //Sử dụng Hook để khai báo state trong class
-  const [isProducts, setProducts] = useState([
-    {
-      id: 1,
-      nameProduct: "Bò bít tết kobe",
-      typeProduct: "Món chính",
-      priceProduct: 50000,
-      imageProduct: "./images/shop_Page/sp1.jpg"
-    },
-    {
-      id: 2,
-      nameProduct: "Cá kho chuối",
-      typeProduct: "Món chính",
-      priceProduct: 150000,
-      imageProduct: "./images/shop_Page/sp2.jpg"
-    },
-    {
-      id: 3,
-      nameProduct: "Cá Thu rang muối",
-      typeProduct: "Món chính",
-      priceProduct: 250000,
-      imageProduct: "./images/shop_Page/sp3.jpg"
-    },
-    {
-      id: 4,
-      nameProduct: "Cơm rang hải sản",
-      typeProduct: "Món chính",
-      priceProduct: 50000,
-      imageProduct: "./images/shop_Page/sp4.jpg"
-    },
-    {
-      id: 5,
-      nameProduct: "Vô danh",
-      typeProduct: "Món chính",
-      priceProduct: 100000,
-      imageProduct: "./images/shop_Page/sp5.jpg"
-    },
-    {
-      id: 6,
-      nameProduct: "Cháo hành",
-      typeProduct: "Món chính",
-      priceProduct: 250000,
-      imageProduct: "./images/shop_Page/sp6.jpg"
-    },
-    {
-      id: 7,
-      nameProduct: "Bánh Flan",
-      typeProduct: "Món chính",
-      priceProduct: 150000,
-      imageProduct: "./images/shop_Page/sp7.jpg"
-    },
-    {
-      id: 8,
-      nameProduct: "Bánh mì 5 tê",
-      typeProduct: "Món chính",
-      priceProduct: 350000,
-      imageProduct: "./images/shop_Page/sp8.jpg"
-    }
-  ]);
-  // Trong đó: href là path trong folder, as là URL
-  const PostLink = props => {
-    <li>
-      <Link href="/shop/[id]" as={`/shop/${props.id}`}>
-        <a>{props.id}</a>
-      </Link>
-    </li>
-  }
+const Content = (products) => {
+  //console.log(products.products);
+  //get data //Array.isArray() trả về true or false, Kiểm tra xem đối tượng truyền vào có phải array không.
+  let newProducts = Array.isArray(products.products) ? products.products : [];
+  //console.log(newProducts);
   //Sử dụng hàm map để in sản phẩm
-  const listProducts = isProducts.map(product => (
-    <div className="col-md-4 col-lg-3 col-sm-6">
-      <div className="card">
-        <div className="hover_area">
-          <img
-            className="card-img-top"
-            src={product.imageProduct}
-            alt="Card image cap"
-          />
-          <div className="hover_card">
-            <a href="cart.html">
-              <i className="fas fa-cart-plus" />
-            </a>
-            <a href="cart.html">
-              <i className="fas fa-expand" />
-            </a>
-            <a href="cart.html">
-              <i className="fas fa-heart" />
-            </a>
+  const listProducts = newProducts.map(product => {
+    return (
+      //Phải set keys. Đọc docs phần Lists and Keys
+      <div className="col-md-4 col-lg-3 col-sm-6" key={product.id}>
+        <div className="card">
+          <div className="hover_area">
+            <Link href="/shop/[id]" as={`/shop/${product.id}`}>
+              <img
+                className="card-img-top"
+                src={product.imageProduct}
+                alt="Card image cap"
+              />
+            </Link>
+            {/* <div className="hover_card">
+              <a href="cart.html">
+                <i className="fas fa-cart-plus" />
+              </a>
+              <a href="cart.html">
+                <i className="fas fa-expand" />
+              </a>
+              <a href="cart.html">
+                <i className="fas fa-heart" />
+              </a>
+            </div> */}
           </div>
-        </div>
-        <div className="card-body">
-          <div className="text-center">
-            {/* <a className="card-text name"><PostLink id={product.id}>{product.nameProduct}</PostLink></a> */}
-            <a className="card-text name">{product.nameProduct}</a>
+          <div className="card-body">
+            <div className="text-center">
+              {/* // Trong đó: href là path trong folder, as là URL */}
+              <Link href="/shop/[id]" as={`/shop/${product.id}`}>
+                <p>{product.id}</p>
+              </Link>
+              <Link href="/shop/[id]" as={`/shop/${product.id}`}>
+                <p>{product.nameProduct}</p>
+              </Link>
+            </div>
+            <p className="card-text tag text-center">
+              <small className="text-muted">{product.typeProduct}</small>
+            </p>
+            <hr />
+            <p />
+            <p className="card-text price text-center">{product.priceProduct}</p>
           </div>
-          <p className="card-text tag text-center">
-            <small className="text-muted">{product.typeProduct}</small>
-          </p>
-          <hr />
-          <p />
-          <p className="card-text price text-center">{product.priceProduct}</p>
         </div>
       </div>
-    </div>
-  ));
+    )
+  });
   //Sử dụng thư viện router để ??? Cái này ko liên quan nhưng kệ
   // const router = useRouter();
 
@@ -163,7 +110,7 @@ const Content = () => {
                   Món tráng miệng
                 </a>
                 <a className="dropdown-item" href="#">
-                  Món chính{" "}
+                  Món chính
                 </a>
               </div>
             </div>
@@ -218,7 +165,9 @@ const Content = () => {
   );
 };
 
-const Page = () => (
+
+
+const Page = props => (
   <Layout>
     <Head>
       <link
@@ -228,8 +177,21 @@ const Page = () => (
         href="css/shop.css"
       />
     </Head>
-    <Content />
+    <Content products={props.products} />
   </Layout>
 );
+
+//Connect data
+Page.getInitialProps = async function () {
+  const res = await fetch(
+    'https://yummy123.herokuapp.com/products'
+  );
+
+  const data = await res.json();
+  //console.log(data);
+  return {
+    products: data
+  };
+};
 
 export default Page;

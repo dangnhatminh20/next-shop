@@ -534,14 +534,14 @@ var Header = function Header() {
     },
     __self: this
   }))))))), __jsx("div", {
-    "class": "header_main text-center",
+    className: "header_main text-center",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 105
     },
     __self: this
   }, __jsx("div", {
-    "class": "content_header",
+    className: "content_header",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106
@@ -983,6 +983,58 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 module.exports = _createClass;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _asyncToGenerator; });
+/* harmony import */ var _core_js_promise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/promise */ "./node_modules/@babel/runtime-corejs2/core-js/promise.js");
+/* harmony import */ var _core_js_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_promise__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    _core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new _core_js_promise__WEBPACK_IMPORTED_MODULE_0___default.a(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
 
 /***/ }),
 
@@ -5372,6 +5424,18 @@ module.exports = function hasSymbols() {
 var bind = __webpack_require__(/*! function-bind */ "./node_modules/function-bind/index.js");
 
 module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
+
+
+/***/ }),
+
+/***/ "./node_modules/isomorphic-unfetch/browser.js":
+/*!****************************************************!*\
+  !*** ./node_modules/isomorphic-unfetch/browser.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = window.fetch || (window.fetch = __webpack_require__(/*! unfetch */ "./node_modules/unfetch/dist/unfetch.mjs").default || __webpack_require__(/*! unfetch */ "./node_modules/unfetch/dist/unfetch.mjs"));
 
 
 /***/ }),
@@ -10465,6 +10529,21 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/unfetch/dist/unfetch.mjs":
+/*!***********************************************!*\
+  !*** ./node_modules/unfetch/dist/unfetch.mjs ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(__webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function(e,n){return n=n||{},new Promise(function(t,r){var s=new XMLHttpRequest,o=[],u=[],i={},a=function(){return{ok:2==(s.status/100|0),statusText:s.statusText,status:s.status,url:s.responseURL,text:function(){return Promise.resolve(s.responseText)},json:function(){return Promise.resolve(JSON.parse(s.responseText))},blob:function(){return Promise.resolve(new Blob([s.response]))},clone:a,headers:{keys:function(){return o},entries:function(){return u},get:function(e){return i[e.toLowerCase()]},has:function(e){return e.toLowerCase()in i}}}};for(var l in s.open(n.method||"get",e,!0),s.onload=function(){s.getAllResponseHeaders().replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm,function(e,n,t){o.push(n=n.toLowerCase()),u.push([n,t]),i[n]=i[n]?i[n]+","+t:t}),t(a())},s.onerror=r,s.withCredentials="include"==n.credentials,n.headers)s.setRequestHeader(l,n.headers[l]);s.send(n.body||null)})});
+//# sourceMappingURL=unfetch.mjs.map
+
+
+/***/ }),
+
 /***/ "./node_modules/url/url.js":
 /*!*********************************!*\
   !*** ./node_modules/url/url.js ***!
@@ -11310,321 +11389,238 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout.js */ "./components/MyLayout.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_MyLayout_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/MyLayout.js */ "./components/MyLayout.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
 var _jsxFileName = "/home/dell/next-shop/pages/shop.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 
 
 
 
  //Render Content
 
-var Content = function Content() {
-  //Sử dụng Hook để khai báo state trong class
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([{
-    id: 1,
-    nameProduct: "Bò bít tết kobe",
-    typeProduct: "Món chính",
-    priceProduct: 50000,
-    imageProduct: "./images/shop_Page/sp1.jpg"
-  }, {
-    id: 2,
-    nameProduct: "Cá kho chuối",
-    typeProduct: "Món chính",
-    priceProduct: 150000,
-    imageProduct: "./images/shop_Page/sp2.jpg"
-  }, {
-    id: 3,
-    nameProduct: "Cá Thu rang muối",
-    typeProduct: "Món chính",
-    priceProduct: 250000,
-    imageProduct: "./images/shop_Page/sp3.jpg"
-  }, {
-    id: 4,
-    nameProduct: "Cơm rang hải sản",
-    typeProduct: "Món chính",
-    priceProduct: 50000,
-    imageProduct: "./images/shop_Page/sp4.jpg"
-  }, {
-    id: 5,
-    nameProduct: "Vô danh",
-    typeProduct: "Món chính",
-    priceProduct: 100000,
-    imageProduct: "./images/shop_Page/sp5.jpg"
-  }, {
-    id: 6,
-    nameProduct: "Cháo hành",
-    typeProduct: "Món chính",
-    priceProduct: 250000,
-    imageProduct: "./images/shop_Page/sp6.jpg"
-  }, {
-    id: 7,
-    nameProduct: "Bánh Flan",
-    typeProduct: "Món chính",
-    priceProduct: 150000,
-    imageProduct: "./images/shop_Page/sp7.jpg"
-  }, {
-    id: 8,
-    nameProduct: "Bánh mì 5 tê",
-    typeProduct: "Món chính",
-    priceProduct: 350000,
-    imageProduct: "./images/shop_Page/sp8.jpg"
-  }]),
-      isProducts = _useState[0],
-      setProducts = _useState[1]; // Trong đó: href là path trong folder, as là URL
+var Content = function Content(products) {
+  //console.log(products.products);
+  //get data //Array.isArray() trả về true or false, Kiểm tra xem đối tượng truyền vào có phải array không.
+  var newProducts = _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_2___default()(products.products) ? products.products : []; //console.log(newProducts);
+  //Sử dụng hàm map để in sản phẩm
 
-
-  var PostLink = function PostLink(props) {
-    __jsx("li", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: "/shop/[id]",
-      as: "/shop/".concat(props.id),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: this
-    }, __jsx("a", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    }, props.id)));
-  }; //Sử dụng hàm map để in sản phẩm
-
-
-  var listProducts = isProducts.map(function (product) {
-    return __jsx("div", {
-      className: "col-md-4 col-lg-3 col-sm-6",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "card",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "hover_area",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "card-img-top",
-      src: product.imageProduct,
-      alt: "Card image cap",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }), __jsx("div", {
-      className: "hover_card",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    }, __jsx("a", {
-      href: "cart.html",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, __jsx("i", {
-      className: "fas fa-cart-plus",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 90
-      },
-      __self: this
-    })), __jsx("a", {
-      href: "cart.html",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
-    }, __jsx("i", {
-      className: "fas fa-expand",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: this
-    })), __jsx("a", {
-      href: "cart.html",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 95
-      },
-      __self: this
-    }, __jsx("i", {
-      className: "fas fa-heart",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 96
-      },
-      __self: this
-    })))), __jsx("div", {
-      className: "card-body",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 100
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "text-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "card-text name",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 103
-      },
-      __self: this
-    }, product.nameProduct)), __jsx("p", {
-      className: "card-text tag text-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 105
-      },
-      __self: this
-    }, __jsx("small", {
-      className: "text-muted",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106
-      },
-      __self: this
-    }, product.typeProduct)), __jsx("hr", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 108
-      },
-      __self: this
-    }), __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 109
-      },
-      __self: this
-    }), __jsx("p", {
-      className: "card-text price text-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 110
-      },
-      __self: this
-    }, product.priceProduct))));
+  var listProducts = newProducts.map(function (product) {
+    return (//Phải set keys. Đọc docs phần Lists and Keys
+      __jsx("div", {
+        className: "col-md-4 col-lg-3 col-sm-6",
+        key: product.id,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "card",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "hover_area",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/shop/[id]",
+        as: "/shop/".concat(product.id),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "card-img-top",
+        src: product.imageProduct,
+        alt: "Card image cap",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }))), __jsx("div", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/shop/[id]",
+        as: "/shop/".concat(product.id),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: this
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: this
+      }, product.id)), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        href: "/shop/[id]",
+        as: "/shop/".concat(product.id),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, product.nameProduct))), __jsx("p", {
+        className: "card-text tag text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, __jsx("small", {
+        className: "text-muted",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, product.typeProduct)), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }), __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }), __jsx("p", {
+        className: "card-text price text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, product.priceProduct))))
+    );
   }); //Sử dụng thư viện router để ??? Cái này ko liên quan nhưng kệ
   // const router = useRouter();
 
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 67
     },
     __self: this
   }, __jsx("section", {
     className: "section_1 container-fluid",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 69
     },
     __self: this
   }, __jsx("div", {
     className: "set_food",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 70
     },
     __self: this
   }, __jsx("div", {
     className: "row set_food_area",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 71
     },
     __self: this
   }, __jsx("div", {
     className: "col-6 image_set",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 72
     },
     __self: this
   }, " "), __jsx("div", {
     className: "col-6 set_content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 73
     },
     __self: this
   }, __jsx("div", {
     className: "text_content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 74
     },
     __self: this
   }, __jsx("p", {
     className: "set_price text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 75
     },
     __self: this
   }, "199.000 vnd"), __jsx("hr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 76
     },
     __self: this
   }), __jsx("p", {
     className: "set_name text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 77
     },
     __self: this
   }, "COMBO T\xCCNH Y\xCAU"), __jsx("p", {
     className: "sub_set text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 78
     },
     __self: this
   }, "2 b\xE1nh m\u1EF3, 2 set tr\xE1i c\xE2y 4 m\xF9a, 2 tr\xE0 tr\xE1i c\xE2y"), __jsx("div", {
     className: "text-center btn_detail",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 81
     },
     __self: this
   }, __jsx("button", {
@@ -11632,35 +11628,35 @@ var Content = function Content() {
     type: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 82
     },
     __self: this
   }, "Mua ngay"))))))), __jsx("section", {
     className: "section_2 container-fluid",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 91
     },
     __self: this
   }, __jsx("div", {
     className: "top_section_2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 92
     },
     __self: this
   }, __jsx("div", {
     className: "row top_area",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 93
     },
     __self: this
   }, __jsx("div", {
     className: "dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 94
     },
     __self: this
   }, __jsx("button", {
@@ -11672,7 +11668,7 @@ var Content = function Content() {
     "aria-expanded": "false",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 95
     },
     __self: this
   }, "T\u1EA5t c\u1EA3 c\xE1c m\xF3n"), __jsx("div", {
@@ -11680,7 +11676,7 @@ var Content = function Content() {
     "aria-labelledby": "dropdownMenuButton",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 105
     },
     __self: this
   }, __jsx("a", {
@@ -11688,7 +11684,7 @@ var Content = function Content() {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 109
     },
     __self: this
   }, "M\xF3n tr\xE1ng mi\u1EC7ng"), __jsx("a", {
@@ -11696,14 +11692,14 @@ var Content = function Content() {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 112
     },
     __self: this
-  }, "M\xF3n ch\xEDnh", " "))), __jsx("div", {
+  }, "M\xF3n ch\xEDnh"))), __jsx("div", {
     className: "search ml-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 117
     },
     __self: this
   }, __jsx("input", {
@@ -11713,49 +11709,49 @@ var Content = function Content() {
     placeholder: "T\xECm ki\u1EBFm..",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 118
     },
     __self: this
   })))), __jsx("div", {
     className: "card_main",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 127
     },
     __self: this
   }, __jsx("div", {
     className: "card-deck row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 128
     },
     __self: this
   }, listProducts), __jsx("div", {
     className: "pagination_area",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 129
     },
     __self: this
   }, __jsx("nav", {
     "aria-label": "Page navigation example",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 130
     },
     __self: this
   }, __jsx("ul", {
     className: "pagination",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 131
     },
     __self: this
   }, __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 132
     },
     __self: this
   }, __jsx("a", {
@@ -11764,28 +11760,28 @@ var Content = function Content() {
     "aria-label": "Previous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 133
     },
     __self: this
   }, __jsx("span", {
     "aria-hidden": "true",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187
+      lineNumber: 134
     },
     __self: this
   }, "\xAB"), __jsx("span", {
     className: "sr-only",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 135
     },
     __self: this
   }, "Previous"))), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 138
     },
     __self: this
   }, __jsx("a", {
@@ -11793,14 +11789,14 @@ var Content = function Content() {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 139
     },
     __self: this
   }, "1")), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 143
     },
     __self: this
   }, __jsx("a", {
@@ -11808,14 +11804,14 @@ var Content = function Content() {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197
+      lineNumber: 144
     },
     __self: this
   }, "2")), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 148
     },
     __self: this
   }, __jsx("a", {
@@ -11823,14 +11819,14 @@ var Content = function Content() {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 149
     },
     __self: this
   }, "3")), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 153
     },
     __self: this
   }, __jsx("a", {
@@ -11839,37 +11835,37 @@ var Content = function Content() {
     "aria-label": "Next",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 154
     },
     __self: this
   }, __jsx("span", {
     "aria-hidden": "true",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 155
     },
     __self: this
   }, "\xBB"), __jsx("span", {
     className: "sr-only",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 156
     },
     __self: this
   }, "Next ")))))))));
 };
 
-var Page = function Page() {
-  return __jsx(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+var Page = function Page(props) {
+  return __jsx(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 222
+      lineNumber: 171
     },
     __self: this
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 223
+      lineNumber: 172
     },
     __self: this
   }, __jsx("link", {
@@ -11879,23 +11875,56 @@ var Page = function Page() {
     href: "css/shop.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 224
+      lineNumber: 173
     },
     __self: this
   })), __jsx(Content, {
+    products: props.products,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231
+      lineNumber: 180
     },
     __self: this
   }));
-};
+}; //Connect data
 
+
+Page.getInitialProps =
+/*#__PURE__*/
+Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+/*#__PURE__*/
+_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+  var res, data;
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7___default()('https://yummy123.herokuapp.com/products');
+
+        case 2:
+          res = _context.sent;
+          _context.next = 5;
+          return res.json();
+
+        case 5:
+          data = _context.sent;
+          return _context.abrupt("return", {
+            products: data
+          });
+
+        case 7:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _callee);
+}));
 /* harmony default export */ __webpack_exports__["default"] = (Page);
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!*****************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fshop&absolutePagePath=%2Fhome%2Fdell%2Fnext-shop%2Fpages%2Fshop.js ***!
   \*****************************************************************************************************************/
@@ -11918,5 +11947,5 @@ module.exports = dll_ea92a4d9664833a26066;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=shop.js.map

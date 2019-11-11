@@ -1326,14 +1326,14 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_2___default.a {
       },
       __self: this
     }, __jsx("meta", {
-      charset: "utf-8",
+      charSet: "utf-8",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
       },
       __self: this
     }), __jsx("meta", {
-      "http-equiv": "X-UA-Compatible",
+      httpEquiv: "X-UA-Compatible",
       content: "IE=edge",
       __source: {
         fileName: _jsxFileName,
@@ -1352,7 +1352,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_2___default.a {
       rel: "stylesheet",
       href: "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
       integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
-      crossorigin: "anonymous",
+      crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
@@ -1362,7 +1362,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_2___default.a {
       rel: "stylesheet",
       href: "https://use.fontawesome.com/releases/v5.5.0/css/all.css",
       integrity: "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",
-      crossorigin: "anonymous",
+      crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 19

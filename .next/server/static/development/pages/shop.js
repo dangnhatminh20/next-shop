@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -623,14 +623,14 @@ const Header = () => __jsx("header", {
   },
   __self: undefined
 }))))))), __jsx("div", {
-  class: "header_main text-center",
+  className: "header_main text-center",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 105
   },
   __self: undefined
 }, __jsx("div", {
-  class: "content_header",
+  className: "content_header",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 106
@@ -682,6 +682,17 @@ const Layout = props => __jsx("div", {
 }));
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ "core-js/library/fn/array/is-array");
 
 /***/ }),
 
@@ -2382,8 +2393,8 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout.js */ "./components/MyLayout.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
@@ -2391,6 +2402,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
+
 var _jsxFileName = "/home/dell/next-shop/pages/shop.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
@@ -2399,302 +2413,213 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
  //Render Content
 
-const Content = () => {
-  //Sử dụng Hook để khai báo state trong class
-  const {
-    0: isProducts,
-    1: setProducts
-  } = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([{
-    id: 1,
-    nameProduct: "Bò bít tết kobe",
-    typeProduct: "Món chính",
-    priceProduct: 50000,
-    imageProduct: "./images/shop_Page/sp1.jpg"
-  }, {
-    id: 2,
-    nameProduct: "Cá kho chuối",
-    typeProduct: "Món chính",
-    priceProduct: 150000,
-    imageProduct: "./images/shop_Page/sp2.jpg"
-  }, {
-    id: 3,
-    nameProduct: "Cá Thu rang muối",
-    typeProduct: "Món chính",
-    priceProduct: 250000,
-    imageProduct: "./images/shop_Page/sp3.jpg"
-  }, {
-    id: 4,
-    nameProduct: "Cơm rang hải sản",
-    typeProduct: "Món chính",
-    priceProduct: 50000,
-    imageProduct: "./images/shop_Page/sp4.jpg"
-  }, {
-    id: 5,
-    nameProduct: "Vô danh",
-    typeProduct: "Món chính",
-    priceProduct: 100000,
-    imageProduct: "./images/shop_Page/sp5.jpg"
-  }, {
-    id: 6,
-    nameProduct: "Cháo hành",
-    typeProduct: "Món chính",
-    priceProduct: 250000,
-    imageProduct: "./images/shop_Page/sp6.jpg"
-  }, {
-    id: 7,
-    nameProduct: "Bánh Flan",
-    typeProduct: "Món chính",
-    priceProduct: 150000,
-    imageProduct: "./images/shop_Page/sp7.jpg"
-  }, {
-    id: 8,
-    nameProduct: "Bánh mì 5 tê",
-    typeProduct: "Món chính",
-    priceProduct: 350000,
-    imageProduct: "./images/shop_Page/sp8.jpg"
-  }]); // Trong đó: href là path trong folder, as là URL
+const Content = products => {
+  //console.log(products.products);
+  //get data //Array.isArray() trả về true or false, Kiểm tra xem đối tượng truyền vào có phải array không.
+  let newProducts = _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(products.products) ? products.products : []; //console.log(newProducts);
+  //Sử dụng hàm map để in sản phẩm
 
-  const PostLink = props => {
-    __jsx("li", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: undefined
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: "/shop/[id]",
-      as: `/shop/${props.id}`,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: undefined
-    }, __jsx("a", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: undefined
-    }, props.id)));
-  }; //Sử dụng hàm map để in sản phẩm
-
-
-  const listProducts = isProducts.map(product => __jsx("div", {
-    className: "col-md-4 col-lg-3 col-sm-6",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "card",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "hover_area",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: undefined
-  }, __jsx("img", {
-    className: "card-img-top",
-    src: product.imageProduct,
-    alt: "Card image cap",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
-  }), __jsx("div", {
-    className: "hover_card",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: undefined
-  }, __jsx("a", {
-    href: "cart.html",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89
-    },
-    __self: undefined
-  }, __jsx("i", {
-    className: "fas fa-cart-plus",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90
-    },
-    __self: undefined
-  })), __jsx("a", {
-    href: "cart.html",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92
-    },
-    __self: undefined
-  }, __jsx("i", {
-    className: "fas fa-expand",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93
-    },
-    __self: undefined
-  })), __jsx("a", {
-    href: "cart.html",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
-  }, __jsx("i", {
-    className: "fas fa-heart",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: undefined
-  })))), __jsx("div", {
-    className: "card-body",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "text-center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: undefined
-  }, __jsx("a", {
-    className: "card-text name",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103
-    },
-    __self: undefined
-  }, product.nameProduct)), __jsx("p", {
-    className: "card-text tag text-center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105
-    },
-    __self: undefined
-  }, __jsx("small", {
-    className: "text-muted",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106
-    },
-    __self: undefined
-  }, product.typeProduct)), __jsx("hr", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: undefined
-  }), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
-  }), __jsx("p", {
-    className: "card-text price text-center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: undefined
-  }, product.priceProduct))))); //Sử dụng thư viện router để ??? Cái này ko liên quan nhưng kệ
+  const listProducts = newProducts.map(product => {
+    return (//Phải set keys. Đọc docs phần Lists and Keys
+      __jsx("div", {
+        className: "col-md-4 col-lg-3 col-sm-6",
+        key: product.id,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: undefined
+      }, __jsx("div", {
+        className: "card",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: undefined
+      }, __jsx("div", {
+        className: "hover_area",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: undefined
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        href: "/shop/[id]",
+        as: `/shop/${product.id}`,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: undefined
+      }, __jsx("img", {
+        className: "card-img-top",
+        src: product.imageProduct,
+        alt: "Card image cap",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: undefined
+      }))), __jsx("div", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: undefined
+      }, __jsx("div", {
+        className: "text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: undefined
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        href: "/shop/[id]",
+        as: `/shop/${product.id}`,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: undefined
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: undefined
+      }, product.id)), __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        href: "/shop/[id]",
+        as: `/shop/${product.id}`,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: undefined
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: undefined
+      }, product.nameProduct))), __jsx("p", {
+        className: "card-text tag text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: undefined
+      }, __jsx("small", {
+        className: "text-muted",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: undefined
+      }, product.typeProduct)), __jsx("hr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: undefined
+      }), __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: undefined
+      }), __jsx("p", {
+        className: "card-text price text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: undefined
+      }, product.priceProduct))))
+    );
+  }); //Sử dụng thư viện router để ??? Cái này ko liên quan nhưng kệ
   // const router = useRouter();
 
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 67
     },
     __self: undefined
   }, __jsx("section", {
     className: "section_1 container-fluid",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 69
     },
     __self: undefined
   }, __jsx("div", {
     className: "set_food",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("div", {
     className: "row set_food_area",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx("div", {
     className: "col-6 image_set",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125
+      lineNumber: 72
     },
     __self: undefined
   }, " "), __jsx("div", {
     className: "col-6 set_content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126
+      lineNumber: 73
     },
     __self: undefined
   }, __jsx("div", {
     className: "text_content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127
+      lineNumber: 74
     },
     __self: undefined
   }, __jsx("p", {
     className: "set_price text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 75
     },
     __self: undefined
   }, "199.000 vnd"), __jsx("hr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 76
     },
     __self: undefined
   }), __jsx("p", {
     className: "set_name text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130
+      lineNumber: 77
     },
     __self: undefined
   }, "COMBO T\xCCNH Y\xCAU"), __jsx("p", {
     className: "sub_set text-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131
+      lineNumber: 78
     },
     __self: undefined
   }, "2 b\xE1nh m\u1EF3, 2 set tr\xE1i c\xE2y 4 m\xF9a, 2 tr\xE0 tr\xE1i c\xE2y"), __jsx("div", {
     className: "text-center btn_detail",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134
+      lineNumber: 81
     },
     __self: undefined
   }, __jsx("button", {
@@ -2702,35 +2627,35 @@ const Content = () => {
     type: "button",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135
+      lineNumber: 82
     },
     __self: undefined
   }, "Mua ngay"))))))), __jsx("section", {
     className: "section_2 container-fluid",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144
+      lineNumber: 91
     },
     __self: undefined
   }, __jsx("div", {
     className: "top_section_2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145
+      lineNumber: 92
     },
     __self: undefined
   }, __jsx("div", {
     className: "row top_area",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("div", {
     className: "dropdown",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx("button", {
@@ -2742,7 +2667,7 @@ const Content = () => {
     "aria-expanded": "false",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148
+      lineNumber: 95
     },
     __self: undefined
   }, "T\u1EA5t c\u1EA3 c\xE1c m\xF3n"), __jsx("div", {
@@ -2750,7 +2675,7 @@ const Content = () => {
     "aria-labelledby": "dropdownMenuButton",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158
+      lineNumber: 105
     },
     __self: undefined
   }, __jsx("a", {
@@ -2758,7 +2683,7 @@ const Content = () => {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162
+      lineNumber: 109
     },
     __self: undefined
   }, "M\xF3n tr\xE1ng mi\u1EC7ng"), __jsx("a", {
@@ -2766,14 +2691,14 @@ const Content = () => {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165
+      lineNumber: 112
     },
     __self: undefined
-  }, "M\xF3n ch\xEDnh", " "))), __jsx("div", {
+  }, "M\xF3n ch\xEDnh"))), __jsx("div", {
     className: "search ml-auto",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170
+      lineNumber: 117
     },
     __self: undefined
   }, __jsx("input", {
@@ -2783,49 +2708,49 @@ const Content = () => {
     placeholder: "T\xECm ki\u1EBFm..",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171
+      lineNumber: 118
     },
     __self: undefined
   })))), __jsx("div", {
     className: "card_main",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 180
+      lineNumber: 127
     },
     __self: undefined
   }, __jsx("div", {
     className: "card-deck row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 181
+      lineNumber: 128
     },
     __self: undefined
   }, listProducts), __jsx("div", {
     className: "pagination_area",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182
+      lineNumber: 129
     },
     __self: undefined
   }, __jsx("nav", {
     "aria-label": "Page navigation example",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 183
+      lineNumber: 130
     },
     __self: undefined
   }, __jsx("ul", {
     className: "pagination",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 184
+      lineNumber: 131
     },
     __self: undefined
   }, __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 185
+      lineNumber: 132
     },
     __self: undefined
   }, __jsx("a", {
@@ -2834,28 +2759,28 @@ const Content = () => {
     "aria-label": "Previous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186
+      lineNumber: 133
     },
     __self: undefined
   }, __jsx("span", {
     "aria-hidden": "true",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187
+      lineNumber: 134
     },
     __self: undefined
   }, "\xAB"), __jsx("span", {
     className: "sr-only",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188
+      lineNumber: 135
     },
     __self: undefined
   }, "Previous"))), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 191
+      lineNumber: 138
     },
     __self: undefined
   }, __jsx("a", {
@@ -2863,14 +2788,14 @@ const Content = () => {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192
+      lineNumber: 139
     },
     __self: undefined
   }, "1")), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 196
+      lineNumber: 143
     },
     __self: undefined
   }, __jsx("a", {
@@ -2878,14 +2803,14 @@ const Content = () => {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197
+      lineNumber: 144
     },
     __self: undefined
   }, "2")), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 201
+      lineNumber: 148
     },
     __self: undefined
   }, __jsx("a", {
@@ -2893,14 +2818,14 @@ const Content = () => {
     href: "#",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 202
+      lineNumber: 149
     },
     __self: undefined
   }, "3")), __jsx("li", {
     className: "page-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 206
+      lineNumber: 153
     },
     __self: undefined
   }, __jsx("a", {
@@ -2909,36 +2834,36 @@ const Content = () => {
     "aria-label": "Next",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 207
+      lineNumber: 154
     },
     __self: undefined
   }, __jsx("span", {
     "aria-hidden": "true",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 208
+      lineNumber: 155
     },
     __self: undefined
   }, "\xBB"), __jsx("span", {
     className: "sr-only",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 209
+      lineNumber: 156
     },
     __self: undefined
   }, "Next ")))))))));
 };
 
-const Page = () => __jsx(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+const Page = props => __jsx(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 222
+    lineNumber: 171
   },
   __self: undefined
 }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 223
+    lineNumber: 172
   },
   __self: undefined
 }, __jsx("link", {
@@ -2948,22 +2873,33 @@ const Page = () => __jsx(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["d
   href: "css/shop.css",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 224
+    lineNumber: 173
   },
   __self: undefined
 })), __jsx(Content, {
+  products: props.products,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 231
+    lineNumber: 180
   },
   __self: undefined
-}));
+})); //Connect data
+
+
+Page.getInitialProps = async function () {
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default()('https://yummy123.herokuapp.com/products');
+  const data = await res.json(); //console.log(data);
+
+  return {
+    products: data
+  };
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Page);
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/shop.js ***!
   \*****************************/
@@ -2972,6 +2908,17 @@ const Page = () => __jsx(_components_MyLayout_js__WEBPACK_IMPORTED_MODULE_1__["d
 
 module.exports = __webpack_require__(/*! /home/dell/next-shop/pages/shop.js */"./pages/shop.js");
 
+
+/***/ }),
+
+/***/ "core-js/library/fn/array/is-array":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/array/is-array" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/array/is-array");
 
 /***/ }),
 
@@ -3052,6 +2999,17 @@ module.exports = require("core-js/library/fn/promise");
 
 /***/ }),
 
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
 /***/ "next/head":
 /*!****************************!*\
   !*** external "next/head" ***!
@@ -3060,17 +3018,6 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
 
 /***/ }),
 
